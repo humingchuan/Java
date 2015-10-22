@@ -1,5 +1,6 @@
 import org.jmock.Expectations;
 import org.jmock.Mockery;
+import org.jmock.integration.junit4.JUnit4Mockery;
 import org.jmock.lib.legacy.ClassImposteriser;
 import org.junit.After;
 import org.junit.Assert;
@@ -15,7 +16,7 @@ public class CalculatorTest
     @Before
     public void setUp() throws Exception
     {
-        Mockery context = new Mockery();
+        Mockery context = new JUnit4Mockery();
         context.setImposteriser(ClassImposteriser.INSTANCE);
         calculator = new Calculator();
         adder = context.mock(Adder.class);
